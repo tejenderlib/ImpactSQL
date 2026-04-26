@@ -1,16 +1,37 @@
--- Show all disasters that happened after 2015
+CREATE DATABASE disaster_analysis;
+USE disaster_analysis;
+SHOW DATABASES;
+
+CREATE TABLE disasters (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    country VARCHAR(100),
+    location TEXT,
+    region VARCHAR(100),
+    origin VARCHAR(100),
+    disaster_type VARCHAR(100),
+    disaster_subtype VARCHAR(100),
+    year INT,
+    total_deaths INT,
+    total_affected BIGINT,
+    total_damage_usd BIGINT,
+    latitude DECIMAL(10,6),
+    longitude DECIMAL(10,6)
+);
+DESCRIBE disasters;
+
 SELECT * FROM disasters;
-SELECT COUNT(*) FROM disasters
-WHERE start_year = 2015;
 
--- Show top 10 disasters with highest deaths
-SELECT disaster_type, total_deaths FROM disasters
-ORDER BY total_deaths DESC
-LIMIT 10;
-
--- Count how many disasters happened between 2000 and 2010
-SELECT 
-	total_deaths AS total_events,
-    start_year
-FROM disasters
-WHERE total_events BETWEEN 2008 AND 2010;
+CREATE TABLE disasters_raw (
+    country TEXT,
+    location TEXT,
+    region TEXT,
+    origin TEXT,
+    disaster_type TEXT,
+    disaster_subtype TEXT,
+    year TEXT,
+    total_deaths TEXT,
+    total_affected TEXT,
+    total_damage_usd TEXT,
+    latitude TEXT,
+    longitude TEXT
+);
