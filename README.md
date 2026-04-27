@@ -22,13 +22,6 @@ CSV Dataset → disasters_raw → disasters
 
 ---
 
-## ⚙️ Current Status
-
-* Cleaning pipeline implemented
-* Final table prepared
-
----
-
 ## 🚧 Next Steps
 
 * Perform SQL analysis
