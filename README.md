@@ -7,7 +7,6 @@ I’m building a data analysis pipeline using **MySQL** and will later create a 
 Right now, the focus is on:
 
 * importing raw data
-* cleaning and structuring it properly
 * preparing a reliable dataset for analysis
 
 ---
