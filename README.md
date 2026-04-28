@@ -14,7 +14,17 @@ Right now, the focus is on:
 ## 🔄 Workflow
 
 ```text
-CSV Dataset → disasters_raw → disasters
+Raw CSV Data 
+↓ 
+Import into MySQL (disasters_raw) 
+↓ 
+Data Cleaning & Transformation 
+↓ 
+Final Structured Table (disasters) 
+↓ 
+Connect to Looker Studio 
+↓ 
+Dashboard Creation & Insights
 ```
 
 * `disasters_raw` → stores raw data (no changes)
