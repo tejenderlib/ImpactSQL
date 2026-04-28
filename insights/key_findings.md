@@ -139,21 +139,6 @@ ORDER BY death_ratio DESC;
 ```
 
 
----
-
-### 🔹 Yearly Disaster Occurrence
-
-```sql
-SELECT 
-    year,
-    COUNT(*) AS total_events
-FROM disasters
-GROUP BY year
-ORDER BY year;
-```
-
-
-
 ## 🧠 Summary
 
 These queries form the analytical backbone of the project, enabling:
