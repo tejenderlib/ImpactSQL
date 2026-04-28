@@ -30,12 +30,4 @@ Dashboard Creation & Insights
 
 ---
 
-## 🚧 Next Steps
-
-* Perform SQL analysis
-* Build dashboard (Looker Studio)
-* Extract insights
-
----
-
 This project is being built step-by-step with focus on **clean data, structured workflow, and real-world practices**.
