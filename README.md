@@ -1,13 +1,11 @@
-# 🌍 Global Disaster Impact Analysis
+🌍 Global Disaster Impact Dashboard
 
-This project is currently **in progress**.
+A data analytics project exploring global disaster trends, human impact, and economic damage using SQL and Google Looker Studio.
 
-I’m building a data analysis pipeline using **MySQL** and will later create a dashboard in Looker Studio.
+🚧 Project Status
 
-Right now, the focus is on:
-
-* importing raw data
-* preparing a reliable dataset for analysis
+This project is currently in progress.
+The main dashboard has been built, and further improvements (such as map-based analysis and advanced insights) are planned.
 
 ---
 
