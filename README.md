@@ -5,7 +5,8 @@ A data analytics project exploring global disaster trends, human impact, and eco
 🚧 Project Status
 
 This project is currently in progress.
-The main dashboard has been built, and further improvements (such as map-based analysis and advanced insights) are planned.
+The main dashboard has been built, and further improvements 
+(such as map-based analysis and advanced insights) are planned.
 
 ---
 
