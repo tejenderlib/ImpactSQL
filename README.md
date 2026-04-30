@@ -28,6 +28,3 @@ Dashboard Creation & Insights
 * `disasters_raw` → stores raw data (no changes)
 * `disasters` → cleaned and structured table
 
----
-
-This project is being built step-by-step with focus on **clean data, structured workflow, and real-world practices**.
