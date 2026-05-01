@@ -1,7 +1,7 @@
 ## 📊 SQL Analysis
 
 This project uses structured SQL queries to extract meaningful insights from global disaster data.
-Below are key analytical queries used during the analysis phase:
+Below are key analytical queries used during the analysis phase.
 
 ---
 
@@ -17,7 +17,11 @@ ORDER BY total_deaths DESC
 LIMIT 10;
 ```
 
+**Insight:**
+Identifies the most fatal disaster categories globally, with earthquakes leading in total deaths.
+
 ---
+
 ### 🔹 Contribution of Each Country to Global Deaths
 
 ```sql
@@ -34,6 +38,8 @@ GROUP BY country
 ORDER BY global_share_pct DESC;
 ```
 
+**Insight:**
+Calculates each country’s percentage contribution to global disaster deaths, highlighting high-impact regions.
 
 ---
 
@@ -49,20 +55,25 @@ ORDER BY total_damage DESC
 LIMIT 10;
 ```
 
+**Insight:**
+Shows which countries experience the highest economic losses due to disasters.
 
 ---
 
-### 🔹 Yearly Trend of Disaster Deaths
+### 🔹 Detect Repeated High-Risk Countries
 
 ```sql
 SELECT 
-    year,
-    SUM(total_deaths) AS total_deaths
+    country,
+    COUNT(*) AS high_impact_events
 FROM disasters
-GROUP BY year
-ORDER BY year;
+WHERE total_deaths > 1000
+GROUP BY country
+ORDER BY high_impact_events DESC;
 ```
 
+**Insight:**
+Identifies countries that frequently experience high-impact disasters.
 
 ---
 
@@ -77,6 +88,8 @@ GROUP BY disaster_type
 ORDER BY total_events DESC;
 ```
 
+**Insight:**
+Highlights the most frequently occurring disaster types globally.
 
 ---
 
@@ -92,6 +105,8 @@ GROUP BY disaster_type
 ORDER BY avg_damage DESC;
 ```
 
+**Insight:**
+Identifies disaster types that cause the highest financial damage per event.
 
 ---
 
@@ -110,6 +125,8 @@ ORDER BY total_deaths DESC
 LIMIT 5;
 ```
 
+**Insight:**
+Highlights extreme disaster events with the highest human impact.
 
 ---
 
@@ -125,6 +142,8 @@ GROUP BY region
 ORDER BY total_deaths DESC;
 ```
 
+**Insight:**
+Compares disaster impact across global regions.
 
 ---
 
@@ -140,6 +159,28 @@ GROUP BY disaster_type
 ORDER BY death_ratio DESC;
 ```
 
+**Insight:**
+Measures how deadly disasters are relative to the number of people affected.
+
+---
+
+### 🔹 Year-over-Year Disaster Trend (Advanced)
+
+```sql
+SELECT 
+    year,
+    COUNT(*) AS total_events,
+    LAG(COUNT(*)) OVER (ORDER BY year) AS prev_year,
+    COUNT(*) - LAG(COUNT(*)) OVER (ORDER BY year) AS yoy_change
+FROM disasters
+GROUP BY year
+ORDER BY year;
+```
+
+**Insight:**
+Tracks changes in disaster frequency over time, identifying growth patterns and anomalies.
+
+---
 
 ## 🧠 Summary
 
@@ -150,3 +191,4 @@ These queries form the analytical backbone of the project, enabling:
 * Trend analysis over time
 * Data-driven insights for visualization
 
+---
