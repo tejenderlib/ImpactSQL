@@ -17,19 +17,21 @@ ORDER BY total_deaths DESC
 LIMIT 10;
 ```
 
-
 ---
-
-### 🔹 Most Affected Countries
+### 🔹 Contribution of Each Country to Global Deaths
 
 ```sql
 SELECT 
     country,
-    SUM(total_affected) AS total_affected
+    SUM(total_deaths) AS deaths,
+    ROUND(
+        SUM(total_deaths) * 100.0 / 
+        SUM(SUM(total_deaths)) OVER (), 
+        2
+    ) AS global_share_pct
 FROM disasters
 GROUP BY country
-ORDER BY total_affected DESC
-LIMIT 10;
+ORDER BY global_share_pct DESC;
 ```
 
 
