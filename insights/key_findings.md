@@ -1,7 +1,7 @@
 ## 📊 SQL Analysis
 
 This project uses structured SQL queries to extract meaningful insights from global disaster data.
-Below are key analytical queries used during the analysis phase.
+Below are key analytical queries along with their relevance to the dashboard.
 
 ---
 
@@ -179,6 +179,20 @@ ORDER BY year;
 
 **Insight:**
 Tracks changes in disaster frequency over time, identifying growth patterns and anomalies.
+
+---
+
+## 🔗 SQL ↔ Dashboard Alignment
+
+Each dashboard visualization is directly backed by SQL logic:
+
+| Dashboard Component    | SQL Purpose                    |
+| ---------------------- | ------------------------------ |
+| 📊 Year Trend Chart    | Aggregates deaths per year     |
+| 🥧 Disaster Type Chart | Distribution of deaths by type |
+| 📋 Top Countries Table | Economic damage ranking        |
+| ⚡ High-Risk Countries  | Repeated severe events         |
+| 📈 Frequency Chart     | Disaster occurrence patterns   |
 
 ---
 
