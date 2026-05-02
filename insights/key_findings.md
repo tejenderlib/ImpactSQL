@@ -22,6 +22,95 @@ Identifies the most fatal disaster categories globally, with earthquakes leading
 
 ---
 
+### 🔹 Anomaly Detection in Disaster Deaths (Z-Score)
+
+```sql
+WITH yearly AS (
+    SELECT 
+        year,
+        SUM(total_deaths) AS deaths
+    FROM disasters
+    GROUP BY year
+),
+stats AS (
+    SELECT 
+        AVG(deaths) AS avg_deaths,
+        STDDEV(deaths) AS std_dev
+    FROM yearly
+)
+SELECT 
+    y.year,
+    y.deaths,
+    ROUND((y.deaths - s.avg_deaths) / s.std_dev, 2) AS z_score
+FROM yearly y, stats s
+ORDER BY z_score DESC;
+```
+
+**Insight:**
+This query identifies **abnormal disaster years** where fatalities significantly deviate from the average.
+Years with high positive z-scores represent **extreme global disaster events** and can be linked to major historical incidents.
+
+---
+
+### 🔹 2. Pareto Analysis (80/20 Rule for Countries)
+
+```sql
+WITH country_deaths AS (
+    SELECT 
+        country,
+        SUM(total_deaths) AS deaths
+    FROM disasters
+    GROUP BY country
+),
+ranked AS (
+    SELECT 
+        country,
+        deaths,
+        SUM(deaths) OVER (ORDER BY deaths DESC) AS cumulative_deaths,
+        SUM(deaths) OVER () AS total_deaths
+    FROM country_deaths
+)
+SELECT 
+    country,
+    deaths,
+    ROUND(cumulative_deaths * 100.0 / total_deaths, 2) AS cumulative_pct
+FROM ranked
+ORDER BY deaths DESC;
+```
+
+**Insight:**
+This analysis reveals that a **small number of countries contribute a large percentage of total global deaths**, confirming a Pareto distribution.
+It highlights regions where disaster impact is disproportionately concentrated.
+
+---
+
+### 🔹 3. Most Dangerous Disaster Type per Country
+
+```sql
+SELECT *
+FROM (
+    SELECT 
+        country,
+        disaster_type,
+        SUM(total_deaths) AS total_deaths,
+        RANK() OVER (
+            PARTITION BY country 
+            ORDER BY SUM(total_deaths) DESC
+        ) AS rank_in_country
+    FROM disasters
+    GROUP BY country, disaster_type
+) ranked
+WHERE rank_in_country = 1;
+```
+
+**Insight:**
+This query identifies the **most lethal disaster type for each country**, enabling region-specific risk analysis.
+It shows that different countries face different dominant disaster threats based on geography and climate.
+
+---
+
+---
+
 ### 🔹 Contribution of Each Country to Global Deaths
 
 ```sql
