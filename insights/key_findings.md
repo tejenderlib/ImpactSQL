@@ -52,7 +52,9 @@ Years with high positive z-scores represent **extreme global disaster events** a
 
 ---
 
-### 🔹 2. Pareto Analysis (80/20 Rule for Countries)
+---
+
+### 🔹 Pareto Analysis (80/20 Rule for Countries)
 
 ```sql
 WITH country_deaths AS (
@@ -289,9 +291,9 @@ Each dashboard visualization is directly backed by SQL logic:
 
 These queries form the analytical backbone of the project, enabling:
 
-* Identification of high-risk disaster types
-* Understanding of global and regional impact
-* Trend analysis over time
-* Data-driven insights for visualization
+- Identification of high-impact disaster types and vulnerable regions  
+- Quantification of global and regional disaster impact  
+- Detection of temporal trends and anomaly patterns  
+- Derivation of data-driven insights to support visualization and decision-making
 
 ---
