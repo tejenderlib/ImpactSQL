@@ -255,24 +255,6 @@ Measures how deadly disasters are relative to the number of people affected.
 
 ---
 
-### 🔹 Year-over-Year Disaster Trend (Advanced)
-
-```sql
-SELECT 
-    year,
-    COUNT(*) AS total_events,
-    LAG(COUNT(*)) OVER (ORDER BY year) AS prev_year,
-    COUNT(*) - LAG(COUNT(*)) OVER (ORDER BY year) AS yoy_change
-FROM disasters
-GROUP BY year
-ORDER BY year;
-```
-
-**Insight:**
-Tracks changes in disaster frequency over time, identifying growth patterns and anomalies.
-
----
-
 ## 🔗 SQL ↔ Dashboard Alignment
 
 Each dashboard visualization is directly backed by SQL logic:
