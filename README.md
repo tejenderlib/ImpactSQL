@@ -30,21 +30,22 @@ It demonstrates:
 
 ## Data Pipeline
 
-```text
-Raw Dataset (EM-DAT)
-        ↓
-MySQL (disasters_raw)
-        ↓
-Data Cleaning & Transformation
-        ↓
-Final Table (disasters)
-        ↓
-Looker Studio Dashboard
-        ↓
-Insights
-```
+<div align="center">
 
----
+EM-DAT Raw Dataset  
+↓  
+MySQL (disasters_raw)  
+↓  
+Data Cleaning & Transformation  
+↓  
+Structured Table (disasters)  
+↓  
+Looker Studio Dashboard  
+↓  
+Insights & Analysis  
+
+</div>
+
 
 ## Data Cleaning & Preparation
 
@@ -59,7 +60,6 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Created derived fields (e.g., combined location for map visualization) to improve geospatial accuracy
 * Ensured consistent data formatting across all records for reliable grouping and filtering
 
----
 
 ## Key Insights
 
@@ -68,7 +68,6 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Economic losses reach trillions of USD globally
 * Disaster frequency shows an increasing trend over time
 
----
 
 ## Tech Stack
 
@@ -77,7 +76,6 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Google Looker Studio
 * CSV
 
----
 
 ## Project Structure
 
@@ -103,5 +101,3 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Dataset sourced from EM-DAT (International Disaster Database)
 * Economic damage values converted from `'000 US$` to USD
 * Data cleaned and standardized for analysis
-
----
