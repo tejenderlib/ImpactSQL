@@ -236,24 +236,6 @@ ORDER BY total_deaths DESC;
 **Insight:**
 Compares disaster impact across global regions.
 
----
-
-### 🔹 Disaster Severity Ratio (Deaths vs Affected)
-
-```sql
-SELECT 
-    disaster_type,
-    SUM(total_deaths) / SUM(total_affected) AS death_ratio
-FROM disasters
-WHERE total_affected > 0
-GROUP BY disaster_type
-ORDER BY death_ratio DESC;
-```
-
-**Insight:**
-Measures how deadly disasters are relative to the number of people affected.
-
----
 
 ## 🔗 SQL ↔ Dashboard Alignment
 
