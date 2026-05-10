@@ -69,14 +69,6 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Disaster frequency shows an increasing trend over time
 
 
-## Tech Stack
-
-* MySQL
-* SQL
-* Google Looker Studio
-* CSV
-
-
 ## Project Structure
 
 ```text
