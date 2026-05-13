@@ -57,7 +57,6 @@ To ensure accurate and reliable analysis, the raw dataset was transformed into a
 * Extracted and created a dedicated `year` column for time-based analysis
 * Handled missing and null values in critical fields to prevent aggregation errors
 * Cleaned and aligned geographic data (`country`, `location`) for accurate mapping
-* Created derived fields (e.g., combined location for map visualization) to improve geospatial accuracy
 * Ensured consistent data formatting across all records for reliable grouping and filtering
 
 
