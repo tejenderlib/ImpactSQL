@@ -221,21 +221,6 @@ Highlights extreme disaster events with the highest human impact.
 
 ---
 
-### 🔹 Region-wise Impact Analysis
-
-```sql
-SELECT 
-    region,
-    SUM(total_deaths) AS total_deaths,
-    SUM(total_affected) AS total_affected
-FROM disasters
-GROUP BY region
-ORDER BY total_deaths DESC;
-```
-
-**Insight:**
-Compares disaster impact across global regions.
-
 
 ## 🔗 SQL ↔ Dashboard Alignment
 
@@ -259,5 +244,3 @@ These queries form the analytical backbone of the project, enabling:
 - Quantification of global and regional disaster impact  
 - Detection of temporal trends and anomaly patterns  
 - Derivation of data-driven insights to support visualization and decision-making
-
----
